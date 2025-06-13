@@ -1,8 +1,8 @@
-package com.zhhn.deepseekai.controller;
+package com.bruce.llm4j.controller;
 
 import io.github.pigmesh.ai.deepseek.core.DeepSeekClient;
 import io.github.pigmesh.ai.deepseek.core.chat.ChatCompletionResponse;
-import org.springframework.beans.factory.annotation.Autowired;
+import jakarta.annotation.Resource;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -11,10 +11,10 @@ import org.springframework.web.bind.annotation.RestController;
 import reactor.core.publisher.Flux;
 
 @RestController
-@RequestMapping("/deepseek/demo")
-public class DemoController {
+@RequestMapping("/deepseek4j")
+public class DeepSeek4JController {
 
-    @Autowired
+    @Resource
     private DeepSeekClient deepSeekClient;
 
     @CrossOrigin("*")
