@@ -2,8 +2,28 @@ spring:
   application:
     name: llm4j
 deepseek:
-  api-key: your-api-key-here  # \u5FC5\u586B\u9879\uFF1A\u4F60\u7684 API \u5BC6\u94A5
+  api-key: your-api-key-here
   model: deepseek-r1:14b
-  base-url: http://127.0.0.1:11434/v1  # \u53EF\u9009\uFF0C\u9ED8\u8BA4\u4E3A\u5B98\u65B9 API \u5730\u5740
+  base-url: http://127.0.0.1:11434/v1
+#  base-url: https://api.siliconflow.cn/v1
+#  model: deepseek-ai/DeepSeek-R1
+#  api-key: sk-qjweznhmxdeiqwwutdpxbwrqdzgrdqzvjcddveivdkbscagu
+#  log-requests: true
+#  log-responses: true
+#  log-level: debug
 server:
   port: 9001
+#logging:
+#  level:
+#    root: debug
+
+langchain4j:
+  open-ai:
+    chat-model:
+      model-name: qwen3:14b
+      base-url: http://127.0.0.1:11434/v1
+      api-key: your-api-key-here
+    streaming-chat-model:
+      model-name: qwen3:14b
+      base-url: http://127.0.0.1:11434/v1
+      api-key: your-api-key-here
