@@ -1,7 +1,7 @@
 package com.bruce.llm4j.controller;
 
 import com.bruce.llm4j.service.Assistant;
-import com.bruce.llm4j.service.StreamingAssistans;
+import com.bruce.llm4j.service.StreamingAssistant;
 import jakarta.annotation.Resource;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -18,7 +18,7 @@ public class LangChain4JController {
     private Assistant assistant;
 
     @Resource
-    private StreamingAssistans streamingAssistans;
+    private StreamingAssistant streamingAssistant;
 
     @GetMapping
     public String naiveChat(@RequestParam("prompt") String prompt) {
@@ -27,7 +27,7 @@ public class LangChain4JController {
 
     @GetMapping(value = "/flux", produces = MediaType.TEXT_EVENT_STREAM_VALUE)
     public Flux<String> fluxChat(@RequestParam("prompt") String prompt) {
-        return streamingAssistans.chat(prompt);
+        return streamingAssistant.chat(prompt);
     }
 
 }
