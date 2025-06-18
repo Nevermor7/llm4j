@@ -5,9 +5,6 @@ deepseek:
   api-key: your-api-key-here
   model: deepseek-r1:14b
   base-url: http://127.0.0.1:11434/v1
-#  base-url: https://api.siliconflow.cn/v1
-#  model: deepseek-ai/DeepSeek-R1
-#  api-key: sk-qjweznhmxdeiqwwutdpxbwrqdzgrdqzvjcddveivdkbscagu
 #  log-requests: true
 #  log-responses: true
 #  log-level: debug
