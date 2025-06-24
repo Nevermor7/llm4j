@@ -1,0 +1,16 @@
+spring:
+  application:
+    name: deepseek4j
+
+deepseek:
+  api-key: your-api-key-here
+  model: deepseek-r1:14b
+  base-url: http://127.0.0.1:11434/v1
+#  log-requests: true
+#  log-responses: true
+#  log-level: debug
+server:
+  port: 9000
+#logging:
+#  level:
+#    root: debug

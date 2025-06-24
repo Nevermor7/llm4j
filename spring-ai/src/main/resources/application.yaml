@@ -1,0 +1,5 @@
+spring:
+  application:
+    name: spring-ai
+server:
+  port: 9003

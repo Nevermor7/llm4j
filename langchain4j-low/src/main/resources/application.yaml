@@ -1,0 +1,15 @@
+spring:
+  application:
+    name: langchain4j-low
+server:
+  port: 9001
+langchain4j:
+  open-ai:
+    chat-model:
+      model-name: deepseek-r1:14b
+      base-url: http://127.0.0.1:11434/v1
+      api-key: your-api-key-here
+    streaming-chat-model:
+      model-name: deepseek-r1:14b
+      base-url: http://127.0.0.1:11434/v1
+      api-key: your-api-key-here
