@@ -6,10 +6,36 @@ server:
 langchain4j:
   open-ai:
     chat-model:
-      model-name: deepseek-r1:14b
-      base-url: http://127.0.0.1:11434/v1
-      api-key: your-api-key-here
+      model-name: Qwen/Qwen3-32B
+#      model-name: deepseek-ai/DeepSeek-R1
+      base-url: https://api.siliconflow.cn/v1
+      api-key: ${API_KEY}
     streaming-chat-model:
-      model-name: deepseek-r1:14b
-      base-url: http://127.0.0.1:11434/v1
-      api-key: your-api-key-here
+      model-name: Qwen/Qwen3-32B # deepseek-ai/DeepSeek-R1
+      base-url: https://api.siliconflow.cn/v1
+      api-key: ${API_KEY}
+  ollama:
+    enable: false
+    chat-model:
+      model-name: qwen3:14b
+      base-url: http://localhost:11434
+      api-key: ollama
+    streaming-chat-model:
+      model-name: qwen3:14b
+#      model-name: deepseek-r1:14
+      base-url: http://localhost:11434
+      api-key: ollama
+
+# Actuator
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    health:
+      show-details: always
+    info:
+      enabled: true
+  server:
+    base-path: /actuator

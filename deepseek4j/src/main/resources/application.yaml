@@ -14,3 +14,17 @@ server:
 #logging:
 #  level:
 #    root: debug
+
+# Actuator
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    health:
+      show-details: always
+    info:
+      enabled: true
+  server:
+    base-path: /actuator
