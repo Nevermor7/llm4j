@@ -1,5 +1,8 @@
 package com.bruce.langchain4jlow.config;
 
+import dev.langchain4j.chain.ConversationalChain;
+import dev.langchain4j.memory.ChatMemory;
+import dev.langchain4j.memory.chat.MessageWindowChatMemory;
 import dev.langchain4j.model.chat.ChatLanguageModel;
 import dev.langchain4j.model.chat.StreamingChatLanguageModel;
 import dev.langchain4j.model.ollama.OllamaChatModel;
@@ -38,6 +41,19 @@ public class LLMConfig {
     private String ollamaStreamingBaseUrl;
     @Value("${langchain4j.ollama.streaming-chat-model.model-name}")
     private String ollamaStreamingModelName;
+
+    @Bean
+    public ChatMemory chatMemory() {
+        return MessageWindowChatMemory.withMaxMessages(20);
+    }
+
+    @Bean
+    public ConversationalChain chain(ChatMemory chatMemory, OpenAiChatModel chatModel) {
+        return ConversationalChain.builder()
+                .chatLanguageModel(chatModel)
+                .chatMemory(chatMemory)
+                .build();
+    }
 
     @Bean
     @ConditionalOnProperty(prefix = "langchain4j.ollama", name = "enable", havingValue = "true")
