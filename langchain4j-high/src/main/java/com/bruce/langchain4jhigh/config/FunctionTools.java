@@ -9,6 +9,7 @@ import org.springframework.util.StringUtils;
 
 import java.util.List;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 @Slf4j
 @Component
@@ -48,7 +49,7 @@ public class FunctionTools {
         po4.setState(1);
         po4.setPark("欢乐谷");
         po4.setDate("2025-06-16");
-        return List.of(po1, po2, po3, po4).stream().map(po -> {
+        return Stream.of(po1, po2, po3, po4).map(po -> {
             if (!date.equals(po.getDate())) {
                 return null;
             }

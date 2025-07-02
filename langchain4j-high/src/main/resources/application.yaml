@@ -5,11 +5,20 @@ server:
   port: 9002
 langchain4j:
   open-ai:
-      chat-model:
-        model-name: qwen3:14b
-        base-url: http://127.0.0.1:11434/v1
-        api-key: your-api-key-here
-      streaming-chat-model:
-        model-name: qwen3:14b
-        base-url: http://127.0.0.1:11434/v1
-        api-key: your-api-key-here
+#      chat-model:
+#        model-name: qwen3:14b
+#        base-url: http://127.0.0.1:11434/v1
+#        api-key: your-api-key-here
+#      streaming-chat-model:
+#        model-name: qwen3:14b
+#        base-url: http://127.0.0.1:11434/v1
+#        api-key: your-api-key-here
+    chat-model:
+      model-name: Qwen/Qwen3-32B
+      #      model-name: deepseek-ai/DeepSeek-R1
+      base-url: https://api.siliconflow.cn/v1
+      api-key: ${API_KEY}
+    streaming-chat-model:
+      model-name: Qwen/Qwen3-32B # deepseek-ai/DeepSeek-R1
+      base-url: https://api.siliconflow.cn/v1
+      api-key: ${API_KEY}
